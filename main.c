@@ -54,7 +54,7 @@ int main(int argc, char const *argv[]) {
 
         response_text = strcat(response_text, response_body);
 
-        char *response = (char*)malloc(strlen(response_text));
+        char *response = (char*)malloc(strlen(response_text) * 20);
         sprintf(response, response_text, strlen(response_body));
 
         write(new_socket, response, strlen(response));
