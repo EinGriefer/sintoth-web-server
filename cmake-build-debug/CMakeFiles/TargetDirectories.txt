@@ -1,0 +1,3 @@
+/Users/jonah/Programming/sintoth-web-server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/jonah/Programming/sintoth-web-server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/jonah/Programming/sintoth-web-server/cmake-build-debug/CMakeFiles/sintoth_web_server.dir
