@@ -9,11 +9,22 @@
 
 char* concat(const char *s1, const char *s2)
 {
-    char *result = malloc(strlen(s1) + strlen(s2) + 1); // +1 for the null-terminator
-    // in real code you would check for errors in malloc here
+    char *result = malloc(strlen(s1) + strlen(s2) + 1);
     strcpy(result, s1);
     strcat(result, s2);
     return result;
+}
+
+char *readFile(char *filename) {
+    FILE *f = fopen(filename, "rt");
+    fseek(f, 0, SEEK_END);
+    long length = ftell(f);
+    fseek(f, 0, SEEK_SET);
+    char *buffer = (char *) malloc(length + 1);
+    buffer[length] = '\0';
+    fread(buffer, 1, length, f);
+    fclose(f);
+    return buffer;
 }
 
 int main(int argc, char const *argv[]) {
@@ -62,8 +73,11 @@ int main(int argc, char const *argv[]) {
         char buffer[30000] = {0};
         read(new_socket, buffer, 30000);
 
-        response_body = "hii";
-        response_text = "HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: ";
+        response_body = "There was an error while rendering this page.";
+
+        response_body = readFile("../html/working.html");
+
+        response_text = "HTTP/1.1 200 OK\nContent-Type: text/html\nServer: sintoth-web-server\nContent-Length: ";
         int response_body_length = strlen(response_body);
 
         char response_body_length_string[12];
