@@ -64,17 +64,19 @@ int main(int argc, char const *argv[]) {
 
         response_body = "hii";
         response_text = "HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: ";
-        int response_body_length = strlen(response_body) + 1;
+        int response_body_length = strlen(response_body);
 
         char response_body_length_string[12];
         sprintf(response_body_length_string, "%d", response_body_length);
 
         response_text = concat(response_text, response_body_length_string);
         response_text = concat(response_text, "\n\n");
-        char* response_text_with_body = concat(response_text, response_body);
 
-        write(new_socket, response_text_with_body, strlen(response_body));
+        char* response_text_with_body = concat(response_text, response_body);
         printf(response_text_with_body);
+        printf("\n");
+
+        write(new_socket, response_text_with_body, strlen(response_text_with_body));
         close(new_socket);
     }
 }
