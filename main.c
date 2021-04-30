@@ -12,6 +12,9 @@ int main(int argc, char const *argv[]) {
     int new_socket;
     int valread;
 
+    char* response_text;
+    char* response_body;
+
     struct sockaddr_in address;
     int addrlen = sizeof address;
 
@@ -48,13 +51,17 @@ int main(int argc, char const *argv[]) {
         char buffer[30000] = {0};
         read(new_socket, buffer, 30000);
 
-        char *response_body = "hi";
+        response_body = "hi";
 
-        char *response_text = "HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: %d\n\n";
+        response_text = "HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: %d\n\n";
 
-        response_text = strcat(response_text, response_body);
+//        response_text = strcat(response_text, response_body);
 
-        char *response = (char*)malloc(strlen(response_text) * 20);
+        char response[(strlen(response_text) + strlen(response_body)) * 2];
+
+        strcat(response, response_text);
+        strcat(response, response_body);
+
         sprintf(response, response_text, strlen(response_body));
 
         write(new_socket, response, strlen(response));
