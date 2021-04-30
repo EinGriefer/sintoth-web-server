@@ -4,6 +4,17 @@
 #include <stdlib.h>
 #include <netinet/in.h>
 #include <string.h>
+#include <stdlib.h>
+#include <string.h>
+
+char* concat(const char *s1, const char *s2)
+{
+    char *result = malloc(strlen(s1) + strlen(s2) + 1); // +1 for the null-terminator
+    // in real code you would check for errors in malloc here
+    strcpy(result, s1);
+    strcat(result, s2);
+    return result;
+}
 
 int main(int argc, char const *argv[]) {
     printf("Starting sintoth web server!\n");
@@ -51,22 +62,19 @@ int main(int argc, char const *argv[]) {
         char buffer[30000] = {0};
         read(new_socket, buffer, 30000);
 
-        response_body = "hi";
+        response_body = "hii";
+        response_text = "HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: ";
+        int response_body_length = strlen(response_body) + 1;
 
-        response_text = "HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: %d\n\n";
+        char response_body_length_string[12];
+        sprintf(response_body_length_string, "%d", response_body_length);
 
-//        response_text = strcat(response_text, response_body);
+        response_text = concat(response_text, response_body_length_string);
+        response_text = concat(response_text, "\n\n");
+        char* response_text_with_body = concat(response_text, response_body);
 
-        char response[(strlen(response_text) + strlen(response_body)) * 2];
-
-        strcat(response, response_text);
-        strcat(response, response_body);
-
-        sprintf(response, response_text, strlen(response_body));
-
-        write(new_socket, response, strlen(response));
+        write(new_socket, response_text_with_body, strlen(response_body));
+        printf(response_text_with_body);
         close(new_socket);
-
-        free(response);
     }
 }
