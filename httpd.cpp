@@ -70,6 +70,7 @@ void httpd::start() {
         char buffer[30000] = {0};
         read(new_socket, buffer, 30000);
 
+        /*
         response_text = strdup("HTTP/1.1 200 OK\nContent-Type: text/html\nServer: sintoth-web-server\nContent-Length: ");
 
         response_body = strdup(readFile("../html/working.html").c_str());
@@ -77,7 +78,10 @@ void httpd::start() {
         response_text = append(response_text, strdup(std::to_string(strlen(response_body)).c_str()));
         response_text = append(response_text, strdup("\n\n"));
         response_text = append(response_text, response_body);
+         */
 
+        Request request(buffer);
+        response_text = strdup(handle(request).c_str());
 
         std::cout << response_text << "\n";
 
