@@ -1,0 +1,10 @@
+#ifndef SINTOTH_WEB_SERVER_REQUEST_H
+#define SINTOTH_WEB_SERVER_REQUEST_H
+
+
+class Request {
+
+};
+
+
+#endif //SINTOTH_WEB_SERVER_REQUEST_H

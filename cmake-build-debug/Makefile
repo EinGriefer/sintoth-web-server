@@ -196,6 +196,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+request/Request.o: request/Request.cpp.o
+
+.PHONY : request/Request.o
+
+# target to build an object file
+request/Request.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/request/Request.cpp.o
+.PHONY : request/Request.cpp.o
+
+request/Request.i: request/Request.cpp.i
+
+.PHONY : request/Request.i
+
+# target to preprocess a source file
+request/Request.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/request/Request.cpp.i
+.PHONY : request/Request.cpp.i
+
+request/Request.s: request/Request.cpp.s
+
+.PHONY : request/Request.s
+
+# target to generate assembly for a file
+request/Request.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/request/Request.cpp.s
+.PHONY : request/Request.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -211,6 +238,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... request/Request.o"
+	@echo "... request/Request.i"
+	@echo "... request/Request.s"
 .PHONY : help
 
 
