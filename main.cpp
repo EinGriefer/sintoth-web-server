@@ -9,6 +9,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <iostream>
 
 std::string readFile(std::string filename) {
     std::ifstream input_stream(filename);
@@ -17,13 +18,20 @@ std::string readFile(std::string filename) {
     return buffer.str();
 }
 
+char* append(char* source, char* text) {
+    std::string source_string(source);
+    std::string text_string(text);
+    source_string.append(text_string);
+    return strdup(source_string.c_str());
+}
+
 int httpd_start() {
     int server_fd;
     int new_socket;
     int valread;
 
-    std::string response_text;
-    std::string response_body;
+    char* response_text;
+    char* response_body;
 
     struct sockaddr_in address;
     int addrlen = sizeof address;
@@ -52,7 +60,7 @@ int httpd_start() {
         exit(EXIT_FAILURE);
     }
 
-    while (1) {
+    while (true) {
         if ((new_socket = accept(server_fd, (struct sockaddr *) &address, (socklen_t *) &addrlen)) < 0) {
             perror("while accepting");
             exit(EXIT_FAILURE);
@@ -61,15 +69,19 @@ int httpd_start() {
         char buffer[30000] = {0};
         read(new_socket, buffer, 30000);
 
-        response_text = "HTTP/1.1 200 OK\nContent-Type: text/html\nServer: sintoth-web-server\nContent-Length: ";
+        response_text = strdup("HTTP/1.1 200 OK\nContent-Type: text/html\nServer: sintoth-web-server\nContent-Length: ");
 
-        response_body = readFile("../html/working.html");
+        response_body = strdup(readFile("../html/working.html").c_str());
 
-        response_text.append(std::to_string(response_body.length()));
-        response_text.append("\n\n");  // Before the request content starts, HTTP protocol requires to empty lines
-        response_text.append(response_body);
+        response_text = append(response_text, strdup(std::to_string(strlen(response_body)).c_str()));
+        response_text = append(response_text, strdup("\n\n"));
+        response_text = append(response_text, response_body);
 
-        write(new_socket, &response_text, response_text.length());
+
+        std::cout << response_text << "\n";
+
+        write(new_socket, response_text, strlen(response_text));
+
         close(new_socket);
     }
 }
