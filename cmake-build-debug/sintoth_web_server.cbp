@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/jonah/Programming/sintoth-web-server/httpd.cpp">
+			<Option target="sintoth_web_server"/>
+		</Unit>
+		<Unit filename="/Users/jonah/Programming/sintoth-web-server/httpd.h">
+			<Option target="sintoth_web_server"/>
+		</Unit>
 		<Unit filename="/Users/jonah/Programming/sintoth-web-server/main.cpp">
 			<Option target="sintoth_web_server"/>
 		</Unit>
