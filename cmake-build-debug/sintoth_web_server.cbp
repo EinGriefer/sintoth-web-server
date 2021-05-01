@@ -44,6 +44,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -64,6 +65,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -78,7 +80,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/jonah/Programming/sintoth-web-server/main.c">
+		<Unit filename="/Users/jonah/Programming/sintoth-web-server/httpd.cpp">
+			<Option target="sintoth_web_server"/>
+		</Unit>
+		<Unit filename="/Users/jonah/Programming/sintoth-web-server/main.cpp">
 			<Option target="sintoth_web_server"/>
 		</Unit>
 		<Unit filename="/Users/jonah/Programming/sintoth-web-server/CMakeLists.txt">

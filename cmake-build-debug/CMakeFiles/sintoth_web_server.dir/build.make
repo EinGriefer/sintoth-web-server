@@ -76,30 +76,45 @@ include CMakeFiles/sintoth_web_server.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/sintoth_web_server.dir/flags.make
 
-CMakeFiles/sintoth_web_server.dir/main.c.o: CMakeFiles/sintoth_web_server.dir/flags.make
-CMakeFiles/sintoth_web_server.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jonah/Programming/sintoth-web-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/sintoth_web_server.dir/main.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sintoth_web_server.dir/main.c.o -c /Users/jonah/Programming/sintoth-web-server/main.c
+CMakeFiles/sintoth_web_server.dir/main.cpp.o: CMakeFiles/sintoth_web_server.dir/flags.make
+CMakeFiles/sintoth_web_server.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jonah/Programming/sintoth-web-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sintoth_web_server.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sintoth_web_server.dir/main.cpp.o -c /Users/jonah/Programming/sintoth-web-server/main.cpp
 
-CMakeFiles/sintoth_web_server.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sintoth_web_server.dir/main.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jonah/Programming/sintoth-web-server/main.c > CMakeFiles/sintoth_web_server.dir/main.c.i
+CMakeFiles/sintoth_web_server.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sintoth_web_server.dir/main.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jonah/Programming/sintoth-web-server/main.cpp > CMakeFiles/sintoth_web_server.dir/main.cpp.i
 
-CMakeFiles/sintoth_web_server.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sintoth_web_server.dir/main.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jonah/Programming/sintoth-web-server/main.c -o CMakeFiles/sintoth_web_server.dir/main.c.s
+CMakeFiles/sintoth_web_server.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sintoth_web_server.dir/main.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jonah/Programming/sintoth-web-server/main.cpp -o CMakeFiles/sintoth_web_server.dir/main.cpp.s
+
+CMakeFiles/sintoth_web_server.dir/httpd.cpp.o: CMakeFiles/sintoth_web_server.dir/flags.make
+CMakeFiles/sintoth_web_server.dir/httpd.cpp.o: ../httpd.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jonah/Programming/sintoth-web-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sintoth_web_server.dir/httpd.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sintoth_web_server.dir/httpd.cpp.o -c /Users/jonah/Programming/sintoth-web-server/httpd.cpp
+
+CMakeFiles/sintoth_web_server.dir/httpd.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sintoth_web_server.dir/httpd.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jonah/Programming/sintoth-web-server/httpd.cpp > CMakeFiles/sintoth_web_server.dir/httpd.cpp.i
+
+CMakeFiles/sintoth_web_server.dir/httpd.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sintoth_web_server.dir/httpd.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jonah/Programming/sintoth-web-server/httpd.cpp -o CMakeFiles/sintoth_web_server.dir/httpd.cpp.s
 
 # Object files for target sintoth_web_server
 sintoth_web_server_OBJECTS = \
-"CMakeFiles/sintoth_web_server.dir/main.c.o"
+"CMakeFiles/sintoth_web_server.dir/main.cpp.o" \
+"CMakeFiles/sintoth_web_server.dir/httpd.cpp.o"
 
 # External object files for target sintoth_web_server
 sintoth_web_server_EXTERNAL_OBJECTS =
 
-sintoth_web_server: CMakeFiles/sintoth_web_server.dir/main.c.o
+sintoth_web_server: CMakeFiles/sintoth_web_server.dir/main.cpp.o
+sintoth_web_server: CMakeFiles/sintoth_web_server.dir/httpd.cpp.o
 sintoth_web_server: CMakeFiles/sintoth_web_server.dir/build.make
 sintoth_web_server: CMakeFiles/sintoth_web_server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jonah/Programming/sintoth-web-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable sintoth_web_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jonah/Programming/sintoth-web-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable sintoth_web_server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sintoth_web_server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

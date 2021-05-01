@@ -142,32 +142,59 @@ sintoth_web_server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/build
 .PHONY : sintoth_web_server/fast
 
-main.o: main.c.o
+httpd.o: httpd.cpp.o
+
+.PHONY : httpd.o
+
+# target to build an object file
+httpd.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/httpd.cpp.o
+.PHONY : httpd.cpp.o
+
+httpd.i: httpd.cpp.i
+
+.PHONY : httpd.i
+
+# target to preprocess a source file
+httpd.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/httpd.cpp.i
+.PHONY : httpd.cpp.i
+
+httpd.s: httpd.cpp.s
+
+.PHONY : httpd.s
+
+# target to generate assembly for a file
+httpd.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/httpd.cpp.s
+.PHONY : httpd.cpp.s
+
+main.o: main.cpp.o
 
 .PHONY : main.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/main.c.o
-.PHONY : main.c.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-main.i: main.c.i
+main.i: main.cpp.i
 
 .PHONY : main.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/main.c.i
-.PHONY : main.c.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main.s: main.c.s
+main.s: main.cpp.s
 
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/main.c.s
-.PHONY : main.c.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -178,6 +205,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sintoth_web_server"
+	@echo "... httpd.o"
+	@echo "... httpd.i"
+	@echo "... httpd.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

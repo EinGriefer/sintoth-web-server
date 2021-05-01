@@ -7,8 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-char* concat(const char *s1, const char *s2)
-{
+char *concat(const char *s1, const char *s2) {
     char *result = malloc(strlen(s1) + strlen(s2) + 1);
     strcpy(result, s1);
     strcat(result, s2);
@@ -28,19 +27,19 @@ char *readFile(char *filename) {
 }
 
 int main(int argc, char const *argv[]) {
-    printf("Starting sintoth web server!\n");
+
 
     int server_fd;
     int new_socket;
     int valread;
 
-    char* response_text;
-    char* response_body;
+    char *response_text;
+    char *response_body;
 
     struct sockaddr_in address;
     int addrlen = sizeof address;
 
-    if((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
+    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
         perror("in socket");
         exit(EXIT_FAILURE);
     }
@@ -53,19 +52,19 @@ int main(int argc, char const *argv[]) {
 
     memset(address.sin_zero, '\0', sizeof address.sin_zero);
 
-    if(bind(server_fd, (struct sockaddr *)&address, sizeof(address)) < 0) {
+    if (bind(server_fd, (struct sockaddr *) &address, sizeof(address)) < 0) {
         perror("in bind");
         exit(EXIT_FAILURE);
     }
 
     // server_fd, max connections until refused connection
-    if(listen(server_fd, 10)) {
+    if (listen(server_fd, 10)) {
         perror("in listen");
         exit(EXIT_FAILURE);
     }
 
-    while(1) {
-        if((new_socket = accept(server_fd, (struct sockaddr *)&address, (socklen_t*)&addrlen)) < 0) {
+    while (1) {
+        if ((new_socket = accept(server_fd, (struct sockaddr *) &address, (socklen_t *) &addrlen)) < 0) {
             perror("while accepting");
             exit(EXIT_FAILURE);
         }
@@ -86,7 +85,7 @@ int main(int argc, char const *argv[]) {
         response_text = concat(response_text, response_body_length_string);
         response_text = concat(response_text, "\n\n");
 
-        char* response_text_with_body = concat(response_text, response_body);
+        char *response_text_with_body = concat(response_text, response_body);
         printf(response_text_with_body);
         printf("\n");
 
