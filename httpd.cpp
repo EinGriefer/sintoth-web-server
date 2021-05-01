@@ -86,4 +86,3 @@ void httpd::start() {
         close(new_socket);
     }
 }
-

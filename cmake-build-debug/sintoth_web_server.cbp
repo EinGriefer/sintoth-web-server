@@ -95,6 +95,15 @@
 		<Unit filename="/Users/jonah/Programming/sintoth-web-server/request/Request.h">
 			<Option target="sintoth_web_server"/>
 		</Unit>
+		<Unit filename="/Users/jonah/Programming/sintoth-web-server/request/RequestMethod.h">
+			<Option target="sintoth_web_server"/>
+		</Unit>
+		<Unit filename="/Users/jonah/Programming/sintoth-web-server/response/Response.cpp">
+			<Option target="sintoth_web_server"/>
+		</Unit>
+		<Unit filename="/Users/jonah/Programming/sintoth-web-server/response/Response.h">
+			<Option target="sintoth_web_server"/>
+		</Unit>
 		<Unit filename="/Users/jonah/Programming/sintoth-web-server/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

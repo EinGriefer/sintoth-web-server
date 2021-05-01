@@ -223,6 +223,33 @@ request/Request.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/request/Request.cpp.s
 .PHONY : request/Request.cpp.s
 
+response/Response.o: response/Response.cpp.o
+
+.PHONY : response/Response.o
+
+# target to build an object file
+response/Response.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/response/Response.cpp.o
+.PHONY : response/Response.cpp.o
+
+response/Response.i: response/Response.cpp.i
+
+.PHONY : response/Response.i
+
+# target to preprocess a source file
+response/Response.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/response/Response.cpp.i
+.PHONY : response/Response.cpp.i
+
+response/Response.s: response/Response.cpp.s
+
+.PHONY : response/Response.s
+
+# target to generate assembly for a file
+response/Response.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/response/Response.cpp.s
+.PHONY : response/Response.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -241,6 +268,9 @@ help:
 	@echo "... request/Request.o"
 	@echo "... request/Request.i"
 	@echo "... request/Request.s"
+	@echo "... response/Response.o"
+	@echo "... response/Response.i"
+	@echo "... response/Response.s"
 .PHONY : help
 
 
