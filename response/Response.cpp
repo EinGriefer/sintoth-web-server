@@ -31,6 +31,7 @@ std::string Response::generate() {
     for(const std::string& header : this->headers) response.append(header + "\n");
     response.append("\n\n");
     response.append(this->html_);
+    return response;
 }
 
 std::vector<std::string> Response::getHeaders() {

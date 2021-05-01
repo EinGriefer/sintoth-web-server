@@ -8,6 +8,14 @@
     std::vector<std::string> getHeaders();
 */
 
+bool replace(std::string& str, const std::string& from, const std::string& to) {
+    size_t start_pos = str.find(from);
+    if(start_pos == std::string::npos)
+        return false;
+    str.replace(start_pos, from.length(), to);
+    return true;
+}
+
 Request::Request(const std::string& request) {
     std::stringstream request_stream(request);
     std::string segment;
@@ -16,8 +24,8 @@ Request::Request(const std::string& request) {
     while(std::getline(request_stream, segment, '\n')) {
         if(segment.rfind("GET", 0) == 0) {
             this->method = RequestMethod::GET;
-            buffer = std::regex_replace(segment, std::regex("\\GET "), "");
-            buffer = std::regex_replace(buffer, std::regex(" HTTP\\/([0-9]\\.[0-9])"), "");
+            replace(segment, "GET ", "");
+            replace(segment, " HTTP/1.1", "");
             this->route = buffer;
         } else {
             this->headers.push_back(segment);
