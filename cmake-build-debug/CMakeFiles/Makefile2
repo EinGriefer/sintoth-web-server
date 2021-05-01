@@ -93,12 +93,12 @@ clean: CMakeFiles/sintoth_web_server.dir/clean
 CMakeFiles/sintoth_web_server.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/jonah/Programming/sintoth-web-server/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target sintoth_web_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/jonah/Programming/sintoth-web-server/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target sintoth_web_server"
 .PHONY : CMakeFiles/sintoth_web_server.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/sintoth_web_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jonah/Programming/sintoth-web-server/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jonah/Programming/sintoth-web-server/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sintoth_web_server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jonah/Programming/sintoth-web-server/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/sintoth_web_server.dir/rule

@@ -142,33 +142,6 @@ sintoth_web_server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/build
 .PHONY : sintoth_web_server/fast
 
-httpd.o: httpd.cpp.o
-
-.PHONY : httpd.o
-
-# target to build an object file
-httpd.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/httpd.cpp.o
-.PHONY : httpd.cpp.o
-
-httpd.i: httpd.cpp.i
-
-.PHONY : httpd.i
-
-# target to preprocess a source file
-httpd.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/httpd.cpp.i
-.PHONY : httpd.cpp.i
-
-httpd.s: httpd.cpp.s
-
-.PHONY : httpd.s
-
-# target to generate assembly for a file
-httpd.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sintoth_web_server.dir/build.make CMakeFiles/sintoth_web_server.dir/httpd.cpp.s
-.PHONY : httpd.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -205,9 +178,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sintoth_web_server"
-	@echo "... httpd.o"
-	@echo "... httpd.i"
-	@echo "... httpd.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

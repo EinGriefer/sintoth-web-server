@@ -6,35 +6,32 @@
 #include <string.h>
 #include <stdlib.h>
 #include <string.h>
+#include <string>
+#include <fstream>
+#include <sstream>
+
+std::string readFile(std::string filename) {
+    std::ifstream input_stream(filename);
+    std::stringstream buffer;
+    buffer << input_stream.rdbuf();
+    return buffer.str();
+}
+
 
 char *concat(const char *s1, const char *s2) {
-    char *result = malloc(strlen(s1) + strlen(s2) + 1);
+    char *result;
     strcpy(result, s1);
     strcat(result, s2);
     return result;
 }
 
-char *readFile(char *filename) {
-    FILE *f = fopen(filename, "rt");
-    fseek(f, 0, SEEK_END);
-    long length = ftell(f);
-    fseek(f, 0, SEEK_SET);
-    char *buffer = (char *) malloc(length + 1);
-    buffer[length] = '\0';
-    fread(buffer, 1, length, f);
-    fclose(f);
-    return buffer;
-}
-
-int main(int argc, char const *argv[]) {
-
-
+int httpd_start() {
     int server_fd;
     int new_socket;
     int valread;
 
-    char *response_text;
-    char *response_body;
+    std::string response_text;
+    std::string response_body;
 
     struct sockaddr_in address;
     int addrlen = sizeof address;
@@ -72,24 +69,20 @@ int main(int argc, char const *argv[]) {
         char buffer[30000] = {0};
         read(new_socket, buffer, 30000);
 
-        response_body = "There was an error while rendering this page.";
+        response_text = "HTTP/1.1 200 OK\nContent-Type: text/html\nServer: sintoth-web-server\nContent-Length: ";
 
         response_body = readFile("../html/working.html");
 
-        response_text = "HTTP/1.1 200 OK\nContent-Type: text/html\nServer: sintoth-web-server\nContent-Length: ";
-        int response_body_length = strlen(response_body);
+        response_text.append(std::to_string(response_body.length()));
+        response_text.append("\n\n");  // Before the request content starts, HTTP protocol requires to empty lines
+        response_text.append(response_body);
 
-        char response_body_length_string[12];
-        sprintf(response_body_length_string, "%d", response_body_length);
-
-        response_text = concat(response_text, response_body_length_string);
-        response_text = concat(response_text, "\n\n");
-
-        char *response_text_with_body = concat(response_text, response_body);
-        printf(response_text_with_body);
-        printf("\n");
-
-        write(new_socket, response_text_with_body, strlen(response_text_with_body));
+        write(new_socket, &response_text, response_text.length());
         close(new_socket);
     }
+}
+
+
+int main() {
+    httpd_start();
 }
