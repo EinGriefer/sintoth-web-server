@@ -17,14 +17,6 @@ std::string readFile(std::string filename) {
     return buffer.str();
 }
 
-
-char *concat(const char *s1, const char *s2) {
-    char *result;
-    strcpy(result, s1);
-    strcat(result, s2);
-    return result;
-}
-
 int httpd_start() {
     int server_fd;
     int new_socket;
