@@ -1,5 +1,4 @@
-# sintoth-web-server
-The sintoth web server (httpd) 
+# c-web-server
 
 ## How to use
 
