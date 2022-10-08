@@ -1,6 +1,6 @@
-#include "httpd.h"
+#include "httpd.hpp"
 
-#include "response/Response.h"
+#include "response/Response.hpp"
 #include <iostream>
 
 std::string httpd::handle(Request request) {

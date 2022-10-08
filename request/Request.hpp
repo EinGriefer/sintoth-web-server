@@ -2,7 +2,7 @@
 #define SINTOTH_WEB_SERVER_REQUEST_H
 
 #include <string>
-#include "RequestMethod.h"
+#include "RequestMethod.hpp"
 #include <vector>
 #include <sstream>
 #include <regex>
